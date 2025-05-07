@@ -1,0 +1,392 @@
+    :root {
+        --primary-color: #3a86ff;
+        --secondary-color: #8338ec;
+        --accent-color: #ff006e;
+        --success-color: #38b000;
+        --warning-color: #ffbe0b;
+        --danger-color: #ff5252;
+        --light-color: #f8f9fa;
+        --dark-color: #212529;
+        --gray-color: #6c757d;
+        --border-radius: 8px;
+        --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s ease;
+    }
+    
+    body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--dark-color);
+        background-color: #f5f7fa;
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* Vehiculos Container */
+    .vehiculos-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    /* Header */
+    .vehiculos-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+    
+    .vehiculos-header h1 {
+        font-size: 28px;
+        margin: 0;
+        color: var(--dark-color);
+    }
+    
+    .back-button {
+        display: flex;
+        align-items: center;
+        padding: 10px 16px;
+        background-color: var(--primary-color);
+        color: white;
+        border-radius: var(--border-radius);
+        text-decoration: none;
+        font-weight: 500;
+        transition: var(--transition);
+    }
+    
+    .back-button:hover {
+        background-color: #2563eb;
+        transform: translateY(-2px);
+        box-shadow: var(--box-shadow);
+    }
+    
+    .back-button .icon {
+        margin-right: 8px;
+        font-size: 18px;
+    }
+    
+    /* Actions Bar */
+    .actions-bar {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    
+    .action-button {
+        display: flex;
+        align-items: center;
+        padding: 10px 16px;
+        border: none;
+        border-radius: var(--border-radius);
+        font-weight: 500;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+    
+    .action-button.create {
+        background-color: var(--success-color);
+        color: white;
+    }
+    
+    .action-button:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--box-shadow);
+    }
+    
+    .action-button .icon {
+        margin-right: 8px;
+        font-size: 18px;
+    }
+    
+    /* Vehicle Type Badges */
+    .vehicle-type {
+        display: inline-block;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+    
+    .vehicle-type.oficial {
+        background-color: #e6f7ff;
+        color: #0958d9;
+    }
+    
+    .vehicle-type.residente {
+        background-color: #f6ffed;
+        color: #389e0d;
+    }
+    
+    .vehicle-type.no-residente {
+        background-color: #fff7e6;
+        color: #d46b08;
+    }
+    
+    /* Error Alert */
+    .error-alert {
+        display: flex;
+        align-items: center;
+        padding: 12px 16px;
+        background-color: #fff5f5;
+        border: 1px solid #ffc9c9;
+        border-radius: var(--border-radius);
+        color: var(--danger-color);
+        margin-bottom: 20px;
+    }
+    
+    .error-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        background-color: var(--danger-color);
+        color: white;
+        border-radius: 50%;
+        margin-right: 12px;
+        font-weight: bold;
+        font-size: 14px;
+    }
+    
+    /* Table Container */
+    .table-container {
+        background-color: white;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+        margin-bottom: 20px;
+    }
+    
+    .data-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    .data-table th,
+    .data-table td {
+        padding: 12px 16px;
+        text-align: left;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .data-table th {
+        background-color: #f8f9fa;
+        font-weight: 600;
+        color: var(--dark-color);
+    }
+    
+    .data-table tr:last-child td {
+        border-bottom: none;
+    }
+    
+    .data-table tr:hover {
+        background-color: #f8f9fa;
+    }
+    
+    .amount {
+        font-weight: 600;
+        color: var(--success-color);
+    }
+    
+    .actions-cell {
+        display: flex;
+        gap: 8px;
+    }
+    
+    .table-action {
+        padding: 6px 12px;
+        border: none;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+    
+    .table-action.edit {
+        background-color: var(--warning-color);
+        color: var(--dark-color);
+    }
+    
+    .table-action.delete {
+        background-color: var(--danger-color);
+        color: white;
+    }
+    
+    .table-action:hover {
+        opacity: 0.9;
+        transform: translateY(-1px);
+    }
+    
+    .no-records {
+        text-align: center;
+        color: var(--gray-color);
+        padding: 30px 0;
+    }
+    
+    /* Modal */
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+    }
+    
+    .modal-container {
+        background-color: white;
+        border-radius: var(--border-radius);
+        width: 90%;
+        max-width: 600px;
+        max-height: 90vh;
+        overflow-y: auto;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+    
+    .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 20px;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .modal-header h2 {
+        margin: 0;
+        font-size: 20px;
+        color: var(--dark-color);
+    }
+    
+    .modal-close {
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: var(--gray-color);
+    }
+    
+    .modal-body {
+        padding: 20px;
+    }
+    
+    .modal-footer {
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+        padding: 16px 0 0 0;
+        border-top: 1px solid #e0e0e0;
+        margin-top: 20px;
+    }
+    
+    /* Form */
+    .form {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .form-label {
+        font-weight: 500;
+        font-size: 14px;
+        color: var(--dark-color);
+    }
+    
+    .form-input,
+    .form-select {
+        padding: 10px 12px;
+        border: 1px solid #e0e0e0;
+        border-radius: var(--border-radius);
+        font-size: 14px;
+        transition: var(--transition);
+    }
+    
+    .form-input:focus,
+    .form-select:focus {
+        border-color: var(--primary-color);
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(58, 134, 255, 0.2);
+    }
+    
+    .form-input.readonly {
+        background-color: #f8f9fa;
+        cursor: not-allowed;
+    }
+    
+    .modal-button {
+        padding: 10px 16px;
+        border: none;
+        border-radius: var(--border-radius);
+        font-weight: 500;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+    
+    .modal-button.cancel {
+        background-color: #e0e0e0;
+        color: var(--dark-color);
+    }
+    
+    .modal-button.save {
+        background-color: var(--primary-color);
+        color: white;
+    }
+    
+    .modal-button:hover:not(:disabled) {
+        transform: translateY(-2px);
+    }
+    
+    .modal-button:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+    }
+    
+    /* Loading State */
+    .loading-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 300px;
+    }
+    
+    .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        border-top-color: var(--primary-color);
+        animation: spin 1s ease-in-out infinite;
+        margin-bottom: 15px;
+    }
+    
+    @keyframes spin {
+        to {
+        transform: rotate(360deg);
+        }
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .vehiculos-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        }
+    
+        .actions-cell {
+        flex-direction: column;
+        }
+    }
+    
