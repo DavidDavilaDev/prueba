@@ -186,5 +186,3 @@ export const deleteVehiculo = async (id) => {
         throw error;
     }
 };
-
-export default api;
